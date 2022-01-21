@@ -6,8 +6,10 @@ export default function middleware(req) {
 
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-      ? hostname.replace(`.multi-tenant-eta.vercel.app`, "")
+      ? hostname.replace(`.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
+
+  console.log(currentHost);
 
   if (pathname.startsWith(`/_sites`)) {
     return new Response(null, { status: 404 });
