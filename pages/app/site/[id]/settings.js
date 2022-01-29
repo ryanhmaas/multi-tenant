@@ -19,7 +19,7 @@ export default function SiteSettings() {
   const siteId = id;
 
   const { data: settings } = useSWR(
-    siteId && `/api/get-site-settings?siteId=${siteId}`,
+    siteId && `/api/site?siteId=${siteId}`,
     fetcher,
     {
       revalidateOnFocus: false,
@@ -65,8 +65,11 @@ export default function SiteSettings() {
 
   async function saveSiteSettings(data) {
     setSaving(true);
-    const response = await fetch("/api/save-site-settings", {
-      method: "POST",
+    const response = await fetch("/api/site", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         id: siteId,
         currentSubdomain: settings.subdomain,
@@ -82,7 +85,9 @@ export default function SiteSettings() {
 
   async function deleteSite(siteId) {
     setDeletingSite(true);
-    const response = await fetch(`/api/delete-site?siteId=${siteId}`);
+    const response = await fetch(`/api/site?siteId=${siteId}`, {
+      method: "DELETE",
+    });
     if (response.ok) {
       router.push("/");
     }
@@ -351,7 +356,7 @@ export default function SiteSettings() {
             event.preventDefault();
             await deleteSite(siteId);
           }}
-          className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all transform bg-white shadow-xl rounded-lg"
+          className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all bg-white shadow-xl rounded-lg"
         >
           <h2 className="font-cal text-2xl mb-6">Delete Site</h2>
           <div className="grid gap-y-5 w-5/6 mx-auto">

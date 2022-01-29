@@ -37,13 +37,10 @@ export default function AppIndex() {
   const { data: session } = useSession();
   const sessionId = session?.user?.id;
 
-  const { data: sites } = useSWR(
-    sessionId && `/api/get-sites?sessionId=${sessionId}`,
-    fetcher
-  );
+  const { data: sites } = useSWR(sessionId && `/api/site`, fetcher);
 
   async function createSite(e) {
-    const res = await fetch("/api/create-site", {
+    const res = await fetch("/api/site", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +67,7 @@ export default function AppIndex() {
             setCreatingSite(true);
             createSite(event);
           }}
-          className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all transform bg-white shadow-xl rounded-lg"
+          className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all bg-white shadow-xl rounded-lg"
         >
           <h2 className="font-cal text-2xl mb-6">Create a New Site</h2>
           <div className="grid gap-y-5 w-5/6 mx-auto">

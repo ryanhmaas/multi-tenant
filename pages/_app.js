@@ -7,7 +7,7 @@ export default function App({
   pageProps: { session, ...pageProps },
 }) {
   return (
-    <PlausibleProvider domain="multi-tenant-eta.vercel.app">
+    <PlausibleProvider domain="demo.vercel.pub">
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>
