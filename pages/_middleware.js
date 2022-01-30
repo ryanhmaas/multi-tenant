@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(req) {
-  const host = "multi-tenant-eta.vercel.app";
+  const host = "vercel.app";
   const { pathname } = req.nextUrl; // get pathname of request (e.g. /blog-slug)
   const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.vercel.pub)
 
@@ -9,6 +9,8 @@ export default function middleware(req) {
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname.replace(`.${host}`, "")
       : hostname.replace(`.localhost:3000`, "");
+
+  console.log(currentHost);
 
   if (pathname.startsWith(`/_sites`)) {
     return new Response(null, { status: 404 });
