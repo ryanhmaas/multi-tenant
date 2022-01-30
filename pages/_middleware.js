@@ -14,6 +14,7 @@ export default function middleware(req) {
 
   console.log('AHHHH', currentHost);
   console.log('hostname', hostname);
+  console.log('pathname', pathname);
 
   if (pathname.startsWith(`/_sites`)) {
     return new Response(null, { status: 404 });
@@ -21,6 +22,7 @@ export default function middleware(req) {
 
   if (!pathname.includes(".") && !pathname.startsWith("/api")) {
     if (currentHost == "app") {
+      console.log("app here");
       if (
         pathname === "/login" &&
         (req.cookies["next-auth.session-token"] ||
