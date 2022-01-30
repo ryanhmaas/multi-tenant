@@ -33,7 +33,7 @@ export default function middleware(req) {
         return NextResponse.redirect("/");
       }
       return NextResponse.rewrite(`/app${pathname}`);
-    } else if (hostname === "localhost:3000") {
+    } else if (hostname === "localhost:3000" || hostname  === host) {
       console.log('rewriting home');
       return NextResponse.rewrite(`/home`);
     } else {
