@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(req) {
-  const host = "vercel.app";
+  const host = "multi-tenant-eta.vercel.app";
   const { pathname } = req.nextUrl; // get pathname of request (e.g. /blog-slug)
-  const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.multi-tenant-eta.vercel.app)
+  const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.vercel.pub)
 
   console.log('hostname pre replace', hostname);
 
@@ -12,12 +12,12 @@ export default function middleware(req) {
       ? hostname.replace(`.${host}`, "")
       : hostname.replace(`.localhost:3000`, "");
 
-  console.log('AHHHH', currentHost);
+  console.log('AHHHH currentHost', currentHost);
   console.log('hostname', hostname);
   console.log('pathname', pathname);
 
   if (pathname.startsWith(`/_sites`)) {
-    console.log("throwing 404");
+    console.log("app here");
 
     return new Response(null, { status: 404 });
   }
@@ -34,8 +34,10 @@ export default function middleware(req) {
       }
       return NextResponse.rewrite(`/app${pathname}`);
     } else if (hostname === "localhost:3000") {
+      console.log('rewriting home');
       return NextResponse.rewrite(`/home`);
     } else {
+      console.log('rewriting to sites');
       return NextResponse.rewrite(`/_sites/${currentHost}${pathname}`);
     }
   }
