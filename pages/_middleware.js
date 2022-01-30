@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export default function middleware(req) {
   const host = "vercel.app";
   const { pathname } = req.nextUrl; // get pathname of request (e.g. /blog-slug)
-  const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.vercel.pub)
+  const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.multi-tenant-eta.vercel.app)
 
   console.log('hostname pre replace', hostname);
 
@@ -17,6 +17,8 @@ export default function middleware(req) {
   console.log('pathname', pathname);
 
   if (pathname.startsWith(`/_sites`)) {
+    console.log("throwing 404");
+
     return new Response(null, { status: 404 });
   }
 

@@ -51,7 +51,7 @@ export default function Login() {
         <p className="mt-2 text-center text-sm text-gray-600">
           Build multi-tenant applications with custom domains. <br /> Read the{" "}
           <a
-            href="https://demo.vercel.pub/platforms-starter-kit"
+            href="https://demo.multi-tenant-eta.vercel.app/platforms-starter-kit"
             target="_blank"
             className="font-medium text-black hover:text-gray-800"
           >
