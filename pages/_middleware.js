@@ -37,8 +37,8 @@ export default function middleware(req) {
           req.cookies["__Secure-next-auth.session-token"])
       ) {
         console.log("app here app/login");
-
-        return NextResponse.redirect("/");
+        url.pathname = "/";
+        return NextResponse.redirect(url);
       }
       url.pathname = `/app${pathname}`;
       return NextResponse.rewrite(url);
