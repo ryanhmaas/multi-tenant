@@ -6,7 +6,7 @@ export default function middleware(req) {
   const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.vercel.pub)
 
   console.log('hostname pre replace', hostname);
-  const host = "www.ryanhmaas.xyz";
+  const host = "ryanhmaas.xyz";
 
   // redirect home obviously
   if (hostname === host) {
