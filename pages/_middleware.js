@@ -8,6 +8,10 @@ export default function middleware(req) {
   console.log('hostname pre replace', hostname);
   const host = "ryanhmaas.xyz";
 
+  if (hostname === host) {
+    return NextResponse.redirect("https://demo.vercel.pub");
+  }
+
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
