@@ -157,7 +157,7 @@ const DomainCard = ({ data, setData }) => {
                 <div>
                   <p className="text-sm font-bold">Value</p>
                   <p className="text-sm font-mono mt-2">
-                    {recordType == "CNAME" ? `cname.multi-tenant-eta.vercel.app` : `76.76.21.21`}
+                    {recordType == "CNAME" ? `cname.ryanhmaas.xyz` : `76.76.21.21`}
                   </p>
                 </div>
               </div>

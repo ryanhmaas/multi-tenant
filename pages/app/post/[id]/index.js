@@ -127,7 +127,7 @@ export default function Post() {
       }),
     });
     await response.json();
-    router.push(`https://${post.site.subdomain}.multi-tenant-eta.vercel.app/${post.slug}`);
+    router.push(`https://${post.site.subdomain}.ryanhmaas.xyz/${post.slug}`);
   };
 
   if (isValidating)

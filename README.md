@@ -13,8 +13,8 @@
 <p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
   <a href="https://vercel.com/guides/nextjs-multi-tenant-application"><strong>Guide</strong></a> ·
-  <a href="https://demo.multi-tenant-eta.vercel.app/"><strong>Demo</strong></a> ·
-  <a href="https://steven.multi-tenant-eta.vercel.app/kitchen-sink"><strong>Kitchen Sink</strong></a> ·
+  <a href="https://demo.ryanhmaas.xyz/"><strong>Demo</strong></a> ·
+  <a href="https://steven.ryanhmaas.xyz/kitchen-sink"><strong>Kitchen Sink</strong></a> ·
   <a href="#contributing"><strong>Contributing</strong></a>
 </p>
 <br/>
@@ -29,9 +29,9 @@ Multi-tenant applications serve multiple customers across different subdomains/c
 
 For example, our demo is a multi-tenant application:
 
-- Subdomain: [demo.multi-tenant-eta.vercel.app](http://demo.multi-tenant-eta.vercel.app)
-- Custom domain: [platformize.co](http://platformize.co) (maps to [demo.multi-tenant-eta.vercel.app](http://demo.multi-tenant-eta.vercel.app))
-- Build your own: [app.multi-tenant-eta.vercel.app](http://app.multi-tenant-eta.vercel.app)
+- Subdomain: [demo.ryanhmaas.xyz](http://demo.ryanhmaas.xyz)
+- Custom domain: [platformize.co](http://platformize.co) (maps to [demo.ryanhmaas.xyz](http://demo.ryanhmaas.xyz))
+- Build your own: [app.ryanhmaas.xyz](http://app.ryanhmaas.xyz)
 
 Another example is [Hashnode](https://vercel.com/customers/hashnode), a popular blogging platform. Each writer has their own unique `.hashnode.dev` subdomain for their blog:
 

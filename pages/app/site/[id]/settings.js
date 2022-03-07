@@ -107,7 +107,7 @@ export default function SiteSettings() {
       if (available) {
         setSubdomainError(null);
       } else {
-        setSubdomainError(`${debouncedSubdomain}.multi-tenant-eta.vercel.app`);
+        setSubdomainError(`${debouncedSubdomain}.ryanhmaas.xyz`);
       }
     }
   }, [debouncedSubdomain]);
@@ -168,7 +168,7 @@ export default function SiteSettings() {
                 }
               />
               <div className="w-1/2 h-12 flex justify-center items-center font-cal rounded-r-lg border-l border-gray-600 bg-gray-100">
-                multi-tenant-eta.vercel.app
+                ryanhmaas.xyz
               </div>
             </div>
             {subdomainError && (

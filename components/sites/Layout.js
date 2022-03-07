@@ -136,7 +136,7 @@ export default function Layout({ meta, children, subdomain }) {
             } flex space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row flex-col lg:w-auto w-full text-center`}
           >
             <a
-              href="https://app.multi-tenant-eta.vercel.app"
+              href="https://app.ryanhmaas.xyz"
               target="_blank"
               className="flex-auto font-cal text-lg rounded-md py-1 sm:py-3 px-5 text-black border border-gray-200 hover:border-black transition-all ease-in-out duration-150 whitespace-no-wrap"
             >

@@ -20,7 +20,7 @@ export default function Index(props) {
     description: data.description,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.multi-tenant-eta.vercel.app`,
+      : `https://${data.subdomain}.ryanhmaas.xyz`,
     ogImage: data.image,
     logo: "/logo.png",
   };

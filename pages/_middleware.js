@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(req) {
-  const host = "multi-tenant-eta.vercel.app";
+  const host = "ryanhmaas.xyz";
   const { pathname } = req.nextUrl; // get pathname of request (e.g. /blog-slug)
   const hostname = req.headers.get("host"); // get hostname of request (e.g. demo.vercel.pub)
 
