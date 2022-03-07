@@ -33,6 +33,8 @@ export default function middleware(req) {
         (req.cookies["next-auth.session-token"] ||
           req.cookies["__Secure-next-auth.session-token"])
       ) {
+        console.log("app here app/login");
+
         return NextResponse.redirect("/");
       }
       url.pathname = `/app${pathname}`;
@@ -41,10 +43,14 @@ export default function middleware(req) {
       hostname === "localhost:3000" ||
       hostname === "platformize.vercel.app"
     ) {
+      console.log("app here home");
+
       url.pathname = `/home`;
       return NextResponse.rewrite(url);
     } else {
       url.pathname = `/_sites/${currentHost}${pathname}`;
+      console.log("app here sites");
+
       return NextResponse.rewrite(url);
     }
   }
