@@ -22,6 +22,7 @@ export default function middleware(req) {
     return new Response(null, { status: 404 });
   }
 
+  console.log(process.env.NODE_ENV === "production" && process.env.VERCEL === "1" );
   console.log("currentHost", currentHost);
 
   if (!pathname.includes(".") && !pathname.startsWith("/api")) {
@@ -41,7 +42,7 @@ export default function middleware(req) {
       return NextResponse.rewrite(url);
     } else if (
       hostname === "localhost:3000" ||
-      hostname === "platformize.vercel.app"
+      hostname === "ryanhmaas.xyz"
     ) {
       console.log("app here home");
 
