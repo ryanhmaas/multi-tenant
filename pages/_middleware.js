@@ -8,8 +8,10 @@ export default function middleware(req) {
   console.log('hostname pre replace', hostname);
   const host = "www.ryanhmaas.xyz";
 
+  // redirect home obviously
   if (hostname === host) {
-    return NextResponse.redirect("https://demo.vercel.pub");
+    url.pathname = `/home`;
+    return NextResponse.rewrite(url);
   }
 
   const currentHost =
