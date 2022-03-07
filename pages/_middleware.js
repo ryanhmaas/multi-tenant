@@ -12,7 +12,6 @@ export default function middleware(req) {
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
           .replace(`.${host}`, "") // you have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
-          .replace(`.platformize.vercel.app`, "") // you can use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
       : // in this case, our team slug is "platformize", thus *.platformize.vercel.app works
         hostname.replace(`.localhost:3000`, "");
 
@@ -40,9 +39,7 @@ export default function middleware(req) {
       url.pathname = `/app${pathname}`;
       return NextResponse.rewrite(url);
     } else if (
-      hostname === "localhost:3000" ||
-      hostname === "ryanhmaas.xyz"
-    ) {
+      hostname === "localhost:3000") {
       console.log("app here home");
 
       url.pathname = `/home`;
